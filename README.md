@@ -5,4 +5,4 @@ Kelompok 6
 
 Ketua Kelompok: Baihaqi Mustafa Surya Atmaja - 20/456839/TK/50663
 
-Anggota 1: Rasyid Baskoro Agung
+Anggota 1: Rasyid Baskoro Agung - 20/456850/TK/50674
