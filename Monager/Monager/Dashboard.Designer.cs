@@ -45,6 +45,8 @@
             label10 = new Label();
             label11 = new Label();
             label12 = new Label();
+            label3 = new Label();
+            label13 = new Label();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel5.SuspendLayout();
@@ -63,7 +65,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(250, 747);
+            panel1.Size = new Size(250, 633);
             panel1.TabIndex = 0;
             // 
             // label5
@@ -76,6 +78,7 @@
             label5.TabIndex = 5;
             label5.Text = "View Expenses";
             label5.TextAlign = ContentAlignment.TopCenter;
+            label5.Click += label5_Click;
             // 
             // label6
             // 
@@ -87,6 +90,7 @@
             label6.TabIndex = 4;
             label6.Text = "View Income";
             label6.TextAlign = ContentAlignment.TopCenter;
+            label6.Click += label6_Click;
             // 
             // label4
             // 
@@ -147,13 +151,14 @@
             // panel3
             // 
             panel3.BackColor = Color.PaleTurquoise;
+            panel3.Controls.Add(label3);
             panel3.Controls.Add(label9);
             panel3.Controls.Add(label8);
             panel3.Controls.Add(label7);
             panel3.Controls.Add(panel4);
             panel3.Location = new Point(250, 135);
             panel3.Name = "panel3";
-            panel3.Size = new Size(623, 277);
+            panel3.Size = new Size(551, 277);
             panel3.TabIndex = 1;
             // 
             // label9
@@ -203,12 +208,13 @@
             // panel5
             // 
             panel5.BackColor = Color.LightCyan;
+            panel5.Controls.Add(label13);
             panel5.Controls.Add(label10);
             panel5.Controls.Add(label11);
             panel5.Controls.Add(label12);
-            panel5.Location = new Point(873, 135);
+            panel5.Location = new Point(801, 135);
             panel5.Name = "panel5";
-            panel5.Size = new Size(623, 277);
+            panel5.Size = new Size(584, 277);
             panel5.TabIndex = 2;
             // 
             // label10
@@ -247,12 +253,36 @@
             label12.Text = "Total Income";
             label12.TextAlign = ContentAlignment.TopCenter;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.PaleTurquoise;
+            label3.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(36, 153);
+            label3.Name = "label3";
+            label3.Size = new Size(262, 32);
+            label3.TabIndex = 9;
+            label3.Text = "Number Of Transaction";
+            label3.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.BackColor = Color.LightCyan;
+            label13.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label13.Location = new Point(54, 153);
+            label13.Name = "label13";
+            label13.Size = new Size(262, 32);
+            label13.TabIndex = 10;
+            label13.Text = "Number Of Transaction";
+            label13.TextAlign = ContentAlignment.TopCenter;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MintCream;
-            ClientSize = new Size(1522, 747);
+            ClientSize = new Size(1383, 633);
             Controls.Add(panel5);
             Controls.Add(panel3);
             Controls.Add(panel1);
@@ -288,5 +318,7 @@
         private Label label10;
         private Label label11;
         private Label label12;
+        private Label label3;
+        private Label label13;
     }
 }

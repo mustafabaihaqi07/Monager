@@ -36,7 +36,21 @@ namespace Monager
 
         private void label4_Click(object sender, EventArgs e)
         {
-            Dashboard Obj = new Dashboard();
+            Expenses Obj = new Expenses();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            ViewIncomes Obj = new ViewIncomes();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            ViewExpenses Obj = new ViewExpenses();
             Obj.Show();
             this.Hide();
         }
