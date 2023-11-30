@@ -30,10 +30,11 @@
         {
             label14 = new Label();
             label3 = new Label();
-            textBox3 = new TextBox();
+            passwordTb = new TextBox();
             label5 = new Label();
-            textBox1 = new TextBox();
-            button1 = new Button();
+            usernameTb = new TextBox();
+            loginBtn = new Button();
+            RegisterBtn = new Label();
             SuspendLayout();
             // 
             // label14
@@ -55,12 +56,15 @@
             label3.TabIndex = 50;
             label3.Text = "Password";
             // 
-            // textBox3
+            // passwordTb
             // 
-            textBox3.Location = new Point(91, 290);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(158, 27);
-            textBox3.TabIndex = 49;
+            passwordTb.BackColor = SystemColors.Window;
+            passwordTb.BorderStyle = BorderStyle.FixedSingle;
+            passwordTb.Location = new Point(91, 290);
+            passwordTb.Name = "passwordTb";
+            passwordTb.PasswordChar = '*';
+            passwordTb.Size = new Size(158, 27);
+            passwordTb.TabIndex = 49;
             // 
             // label5
             // 
@@ -71,22 +75,34 @@
             label5.TabIndex = 48;
             label5.Text = "Username";
             // 
-            // textBox1
+            // usernameTb
             // 
-            textBox1.Location = new Point(91, 188);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(158, 27);
-            textBox1.TabIndex = 47;
+            usernameTb.BorderStyle = BorderStyle.FixedSingle;
+            usernameTb.Location = new Point(91, 188);
+            usernameTb.Name = "usernameTb";
+            usernameTb.Size = new Size(158, 27);
+            usernameTb.TabIndex = 47;
             // 
-            // button1
+            // loginBtn
             // 
-            button1.BackColor = Color.Teal;
-            button1.Location = new Point(91, 380);
-            button1.Name = "button1";
-            button1.Size = new Size(158, 29);
-            button1.TabIndex = 53;
-            button1.Text = "Login";
-            button1.UseVisualStyleBackColor = false;
+            loginBtn.BackColor = Color.Teal;
+            loginBtn.Location = new Point(91, 380);
+            loginBtn.Name = "loginBtn";
+            loginBtn.Size = new Size(158, 29);
+            loginBtn.TabIndex = 53;
+            loginBtn.Text = "Login";
+            loginBtn.UseVisualStyleBackColor = false;
+            loginBtn.Click += loginBtn_Click;
+            // 
+            // RegisterBtn
+            // 
+            RegisterBtn.AutoSize = true;
+            RegisterBtn.Location = new Point(12, 466);
+            RegisterBtn.Name = "RegisterBtn";
+            RegisterBtn.Size = new Size(63, 20);
+            RegisterBtn.TabIndex = 54;
+            RegisterBtn.Text = "Register";
+            RegisterBtn.Click += RegisterBtn_Click;
             // 
             // Login
             // 
@@ -94,13 +110,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MintCream;
             ClientSize = new Size(368, 495);
-            Controls.Add(button1);
+            Controls.Add(RegisterBtn);
+            Controls.Add(loginBtn);
             Controls.Add(label3);
-            Controls.Add(textBox3);
+            Controls.Add(passwordTb);
             Controls.Add(label5);
-            Controls.Add(textBox1);
+            Controls.Add(usernameTb);
             Controls.Add(label14);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Login";
             Text = "Login";
             ResumeLayout(false);
@@ -111,9 +128,10 @@
 
         private Label label14;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox passwordTb;
         private Label label5;
-        private TextBox textBox1;
-        private Button button1;
+        private TextBox usernameTb;
+        private Button loginBtn;
+        private Label RegisterBtn;
     }
 }

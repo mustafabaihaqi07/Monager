@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewExpenses));
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             label7 = new Label();
             label5 = new Label();
             label6 = new Label();
@@ -37,19 +39,24 @@
             label2 = new Label();
             label1 = new Label();
             panel2 = new Panel();
-            dataGridView1 = new DataGridView();
+            ExpenseDGV = new DataGridView();
             label15 = new Label();
-            comboBox1 = new ComboBox();
+            ExpenseCatCb = new ComboBox();
             label11 = new Label();
             label12 = new Label();
-            textBox1 = new TextBox();
+            ExpenseNameTb = new TextBox();
+            pictureBox3 = new PictureBox();
+            ExpenseSearchBtn = new Button();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ExpenseDGV).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.DarkSlateGray;
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label7);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label6);
@@ -63,6 +70,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(250, 633);
             panel1.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(31, 579);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(41, 42);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 80;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // label7
             // 
@@ -155,16 +173,17 @@
             panel2.Size = new Size(249, 59);
             panel2.TabIndex = 7;
             // 
-            // dataGridView1
+            // ExpenseDGV
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.GridColor = Color.LightCyan;
-            dataGridView1.Location = new Point(271, 210);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(1091, 407);
-            dataGridView1.TabIndex = 68;
+            ExpenseDGV.BackgroundColor = Color.MintCream;
+            ExpenseDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            ExpenseDGV.GridColor = Color.LightCyan;
+            ExpenseDGV.Location = new Point(271, 210);
+            ExpenseDGV.Name = "ExpenseDGV";
+            ExpenseDGV.RowHeadersWidth = 51;
+            ExpenseDGV.RowTemplate.Height = 29;
+            ExpenseDGV.Size = new Size(1091, 407);
+            ExpenseDGV.TabIndex = 68;
             // 
             // label15
             // 
@@ -178,19 +197,19 @@
             label15.Text = "View Expenses";
             label15.TextAlign = ContentAlignment.TopCenter;
             // 
-            // comboBox1
+            // ExpenseCatCb
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Salary", "Gifts", "Other" });
-            comboBox1.Location = new Point(928, 144);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 67;
+            ExpenseCatCb.FormattingEnabled = true;
+            ExpenseCatCb.Items.AddRange(new object[] { "Food", "College", "Travel", "Other" });
+            ExpenseCatCb.Location = new Point(881, 144);
+            ExpenseCatCb.Name = "ExpenseCatCb";
+            ExpenseCatCb.Size = new Size(151, 28);
+            ExpenseCatCb.TabIndex = 67;
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(794, 144);
+            label11.Location = new Point(747, 144);
             label11.Name = "label11";
             label11.Size = new Size(80, 20);
             label11.TabIndex = 66;
@@ -199,37 +218,64 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(458, 141);
+            label12.Location = new Point(411, 141);
             label12.Name = "label12";
             label12.Size = new Size(107, 20);
             label12.TabIndex = 65;
             label12.Text = "Expense Name";
             // 
-            // textBox1
+            // ExpenseNameTb
             // 
-            textBox1.Location = new Point(595, 141);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 64;
+            ExpenseNameTb.Location = new Point(548, 141);
+            ExpenseNameTb.Name = "ExpenseNameTb";
+            ExpenseNameTb.Size = new Size(125, 27);
+            ExpenseNameTb.TabIndex = 64;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(1337, 12);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(34, 31);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 69;
+            pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
+            // 
+            // ExpenseSearchBtn
+            // 
+            ExpenseSearchBtn.Location = new Point(1116, 144);
+            ExpenseSearchBtn.Name = "ExpenseSearchBtn";
+            ExpenseSearchBtn.Size = new Size(94, 29);
+            ExpenseSearchBtn.TabIndex = 71;
+            ExpenseSearchBtn.Text = "Search";
+            ExpenseSearchBtn.UseVisualStyleBackColor = true;
+            ExpenseSearchBtn.Click += ExpenseSearchBtn_Click;
             // 
             // ViewExpenses
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.MintCream;
             ClientSize = new Size(1383, 633);
-            Controls.Add(dataGridView1);
+            Controls.Add(ExpenseSearchBtn);
+            Controls.Add(pictureBox3);
+            Controls.Add(ExpenseDGV);
             Controls.Add(label15);
-            Controls.Add(comboBox1);
+            Controls.Add(ExpenseCatCb);
             Controls.Add(label11);
             Controls.Add(label12);
-            Controls.Add(textBox1);
+            Controls.Add(ExpenseNameTb);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ViewExpenses";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ViewExpenses";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ExpenseDGV).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -245,11 +291,14 @@
         private Label label2;
         private Label label1;
         private Panel panel2;
-        private DataGridView dataGridView1;
+        private DataGridView ExpenseDGV;
         private Label label15;
-        private ComboBox comboBox1;
+        private ComboBox ExpenseCatCb;
         private Label label11;
         private Label label12;
-        private TextBox textBox1;
+        private TextBox ExpenseNameTb;
+        private PictureBox pictureBox3;
+        private Button ExpenseSearchBtn;
+        private PictureBox pictureBox1;
     }
 }

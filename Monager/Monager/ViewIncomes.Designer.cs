@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewIncomes));
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -38,18 +40,23 @@
             label7 = new Label();
             panel2 = new Panel();
             label15 = new Label();
-            comboBox1 = new ComboBox();
+            IncomeDGV = new DataGridView();
+            pictureBox3 = new PictureBox();
+            IncomeSearchBtn = new Button();
+            IncomeCatCb = new ComboBox();
             label11 = new Label();
             label12 = new Label();
-            textBox1 = new TextBox();
-            dataGridView1 = new DataGridView();
+            IncomeNameTb = new TextBox();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)IncomeDGV).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.DarkSlateGray;
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label3);
@@ -63,6 +70,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(250, 633);
             panel1.TabIndex = 17;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(31, 579);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(41, 42);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 77;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // label1
             // 
@@ -168,50 +186,72 @@
             label15.Text = "View Income";
             label15.TextAlign = ContentAlignment.TopCenter;
             // 
-            // comboBox1
+            // IncomeDGV
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Salary", "Gifts", "Other" });
-            comboBox1.Location = new Point(833, 144);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 61;
+            IncomeDGV.BackgroundColor = Color.MintCream;
+            IncomeDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            IncomeDGV.GridColor = Color.LightCyan;
+            IncomeDGV.Location = new Point(271, 210);
+            IncomeDGV.Name = "IncomeDGV";
+            IncomeDGV.RowHeadersWidth = 51;
+            IncomeDGV.RowTemplate.Height = 29;
+            IncomeDGV.Size = new Size(1091, 407);
+            IncomeDGV.TabIndex = 62;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(1337, 12);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(34, 31);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 63;
+            pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
+            // 
+            // IncomeSearchBtn
+            // 
+            IncomeSearchBtn.Location = new Point(1115, 145);
+            IncomeSearchBtn.Name = "IncomeSearchBtn";
+            IncomeSearchBtn.Size = new Size(94, 29);
+            IncomeSearchBtn.TabIndex = 76;
+            IncomeSearchBtn.Text = "Search";
+            IncomeSearchBtn.UseVisualStyleBackColor = true;
+            IncomeSearchBtn.Click += IncomeSearchBtn_Click_1;
+            // 
+            // IncomeCatCb
+            // 
+            IncomeCatCb.FormattingEnabled = true;
+            IncomeCatCb.Items.AddRange(new object[] { "Salary", "Gifts", "Other" });
+            IncomeCatCb.Location = new Point(880, 145);
+            IncomeCatCb.Name = "IncomeCatCb";
+            IncomeCatCb.Size = new Size(151, 28);
+            IncomeCatCb.TabIndex = 75;
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(699, 144);
+            label11.Location = new Point(746, 145);
             label11.Name = "label11";
             label11.Size = new Size(80, 20);
-            label11.TabIndex = 57;
+            label11.TabIndex = 74;
             label11.Text = "Categories";
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(373, 144);
+            label12.Location = new Point(410, 142);
             label12.Name = "label12";
-            label12.Size = new Size(102, 20);
-            label12.TabIndex = 55;
-            label12.Text = "Income Name";
+            label12.Size = new Size(107, 20);
+            label12.TabIndex = 73;
+            label12.Text = "Expense Name";
             // 
-            // textBox1
+            // IncomeNameTb
             // 
-            textBox1.Location = new Point(510, 144);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 54;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.GridColor = Color.LightCyan;
-            dataGridView1.Location = new Point(271, 210);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(1091, 407);
-            dataGridView1.TabIndex = 62;
+            IncomeNameTb.Location = new Point(547, 142);
+            IncomeNameTb.Name = "IncomeNameTb";
+            IncomeNameTb.Size = new Size(125, 27);
+            IncomeNameTb.TabIndex = 72;
             // 
             // ViewIncomes
             // 
@@ -219,20 +259,25 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MintCream;
             ClientSize = new Size(1383, 633);
-            Controls.Add(dataGridView1);
-            Controls.Add(label15);
-            Controls.Add(comboBox1);
+            Controls.Add(IncomeSearchBtn);
+            Controls.Add(IncomeCatCb);
             Controls.Add(label11);
             Controls.Add(label12);
-            Controls.Add(textBox1);
+            Controls.Add(IncomeNameTb);
+            Controls.Add(pictureBox3);
+            Controls.Add(IncomeDGV);
+            Controls.Add(label15);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ViewIncomes";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ViewIncomes";
             Load += ViewIncomes_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)IncomeDGV).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -249,10 +294,13 @@
         private Label label7;
         private Panel panel2;
         private Label label15;
-        private ComboBox comboBox1;
+        private DataGridView IncomeDGV;
+        private PictureBox pictureBox3;
+        private Button IncomeSearchBtn;
+        private ComboBox IncomeCatCb;
         private Label label11;
         private Label label12;
-        private TextBox textBox1;
-        private DataGridView dataGridView1;
+        private TextBox IncomeNameTb;
+        private PictureBox pictureBox1;
     }
 }
