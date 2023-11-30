@@ -53,7 +53,7 @@
             RegisterBtn.TabIndex = 59;
             RegisterBtn.Text = "Register";
             RegisterBtn.UseVisualStyleBackColor = false;
-            RegisterBtn.Click += RegisterBtn_Click;
+            RegisterBtn.Click += label2_Click;
             // 
             // label3
             // 
@@ -80,7 +80,6 @@
             label5.Size = new Size(50, 20);
             label5.TabIndex = 56;
             label5.Text = "Phone";
-            label5.Click += label5_Click;
             // 
             // PhoneTb
             // 
@@ -98,7 +97,6 @@
             label14.Size = new Size(184, 36);
             label14.TabIndex = 54;
             label14.Text = "Monager";
-            label14.Click += label14_Click;
             // 
             // label1
             // 
@@ -108,7 +106,6 @@
             label1.Size = new Size(96, 20);
             label1.TabIndex = 63;
             label1.Text = "Date Of Birth";
-            label1.Click += label1_Click;
             // 
             // UnameTb
             // 
@@ -118,7 +115,6 @@
             UnameTb.Size = new Size(75, 20);
             UnameTb.TabIndex = 61;
             UnameTb.Text = "Username";
-            UnameTb.Click += label2_Click;
             // 
             // UsernameTb
             // 

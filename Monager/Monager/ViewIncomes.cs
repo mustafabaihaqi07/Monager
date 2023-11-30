@@ -75,7 +75,7 @@ namespace Monager
             if (IncomeNameTb.Text == "" || IncomeCatCb.SelectedIndex == -1)
             {
                 conn.Open();
-                string query = "select * from expenseTable";
+                string query = "select * from incomeTable";
                 SqlDataAdapter sda = new SqlDataAdapter(query, conn);
                 SqlCommandBuilder builder = new SqlCommandBuilder(sda);
                 var ds = new DataSet();
