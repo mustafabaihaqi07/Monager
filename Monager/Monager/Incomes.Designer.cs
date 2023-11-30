@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Incomes));
             panel1 = new Panel();
             label8 = new Label();
             label9 = new Label();
@@ -38,27 +39,32 @@
             label14 = new Label();
             panel3 = new Panel();
             label1 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            comboBox1 = new ComboBox();
+            incDate = new DateTimePicker();
+            incCatCb = new ComboBox();
             label2 = new Label();
             label3 = new Label();
-            textBox3 = new TextBox();
+            incAmountTb = new TextBox();
             label4 = new Label();
-            textBox2 = new TextBox();
+            incDescTb = new TextBox();
             label5 = new Label();
-            textBox1 = new TextBox();
+            incNameTb = new TextBox();
             panel2 = new Panel();
-            label6 = new Label();
+            TotalIncomeLbl = new Label();
             label7 = new Label();
             label15 = new Label();
-            button1 = new Button();
+            saveBtn = new Button();
+            pictureBox3 = new PictureBox();
+            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.DarkSlateGray;
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label8);
             panel1.Controls.Add(label9);
             panel1.Controls.Add(label10);
@@ -173,30 +179,32 @@
             label1.TabIndex = 50;
             label1.Text = "Description";
             // 
-            // dateTimePicker1
+            // incDate
             // 
-            dateTimePicker1.Location = new Point(845, 245);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(250, 27);
-            dateTimePicker1.TabIndex = 49;
+            incDate.CustomFormat = "";
+            incDate.Location = new Point(845, 245);
+            incDate.Name = "incDate";
+            incDate.Size = new Size(250, 27);
+            incDate.TabIndex = 49;
+            incDate.Value = new DateTime(2023, 11, 30, 9, 28, 50, 0);
             // 
-            // comboBox1
+            // incCatCb
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Salary", "Gifts", "Other" });
-            comboBox1.Location = new Point(845, 142);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 48;
+            incCatCb.FormattingEnabled = true;
+            incCatCb.Items.AddRange(new object[] { "Salary", "Gifts", "Other" });
+            incCatCb.Location = new Point(845, 142);
+            incCatCb.Name = "incCatCb";
+            incCatCb.Size = new Size(151, 28);
+            incCatCb.TabIndex = 48;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Location = new Point(845, 212);
             label2.Name = "label2";
-            label2.Size = new Size(102, 20);
+            label2.Size = new Size(41, 20);
             label2.TabIndex = 47;
-            label2.Text = "Income Name";
+            label2.Text = "Date";
             // 
             // label3
             // 
@@ -207,12 +215,12 @@
             label3.TabIndex = 46;
             label3.Text = "Amount\r\n";
             // 
-            // textBox3
+            // incAmountTb
             // 
-            textBox3.Location = new Point(566, 245);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 27);
-            textBox3.TabIndex = 45;
+            incAmountTb.Location = new Point(566, 245);
+            incAmountTb.Name = "incAmountTb";
+            incAmountTb.Size = new Size(125, 27);
+            incAmountTb.TabIndex = 45;
             // 
             // label4
             // 
@@ -223,13 +231,13 @@
             label4.TabIndex = 44;
             label4.Text = "Categories";
             // 
-            // textBox2
+            // incDescTb
             // 
-            textBox2.Location = new Point(647, 350);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(243, 89);
-            textBox2.TabIndex = 43;
+            incDescTb.Location = new Point(647, 350);
+            incDescTb.Multiline = true;
+            incDescTb.Name = "incDescTb";
+            incDescTb.Size = new Size(243, 89);
+            incDescTb.TabIndex = 43;
             // 
             // label5
             // 
@@ -240,39 +248,40 @@
             label5.TabIndex = 42;
             label5.Text = "Income Name";
             // 
-            // textBox1
+            // incNameTb
             // 
-            textBox1.Location = new Point(566, 143);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 41;
+            incNameTb.Location = new Point(566, 143);
+            incNameTb.Name = "incNameTb";
+            incNameTb.Size = new Size(125, 27);
+            incNameTb.TabIndex = 41;
             // 
             // panel2
             // 
             panel2.BackColor = Color.PaleTurquoise;
-            panel2.Controls.Add(label6);
+            panel2.Controls.Add(TotalIncomeLbl);
             panel2.Controls.Add(label7);
             panel2.Location = new Point(293, 491);
             panel2.Name = "panel2";
             panel2.Size = new Size(250, 95);
             panel2.TabIndex = 40;
             // 
-            // label6
+            // TotalIncomeLbl
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(58, 49);
-            label6.Name = "label6";
-            label6.Size = new Size(126, 20);
-            label6.TabIndex = 26;
-            label6.Text = "AmountInRupiahs";
+            TotalIncomeLbl.AutoSize = true;
+            TotalIncomeLbl.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TotalIncomeLbl.Location = new Point(58, 49);
+            TotalIncomeLbl.Name = "TotalIncomeLbl";
+            TotalIncomeLbl.Size = new Size(168, 28);
+            TotalIncomeLbl.TabIndex = 26;
+            TotalIncomeLbl.Text = "AmountInRupiahs";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label7.Location = new Point(16, 12);
             label7.Name = "label7";
-            label7.Size = new Size(123, 28);
+            label7.Size = new Size(134, 28);
             label7.TabIndex = 0;
             label7.Text = "Total Income";
             // 
@@ -288,15 +297,38 @@
             label15.Text = "Income Details";
             label15.TextAlign = ContentAlignment.TopCenter;
             // 
-            // button1
+            // saveBtn
             // 
-            button1.BackColor = Color.Teal;
-            button1.Location = new Point(694, 491);
-            button1.Name = "button1";
-            button1.Size = new Size(152, 29);
-            button1.TabIndex = 52;
-            button1.Text = "git ";
-            button1.UseVisualStyleBackColor = false;
+            saveBtn.BackColor = Color.Teal;
+            saveBtn.Location = new Point(694, 491);
+            saveBtn.Name = "saveBtn";
+            saveBtn.Size = new Size(152, 29);
+            saveBtn.TabIndex = 52;
+            saveBtn.Text = "Save";
+            saveBtn.UseVisualStyleBackColor = false;
+            saveBtn.Click += saveBtn_Click;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(1337, 12);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(34, 31);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 53;
+            pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(31, 579);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(41, 42);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 79;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // Incomes
             // 
@@ -304,27 +336,31 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MintCream;
             ClientSize = new Size(1383, 633);
-            Controls.Add(button1);
+            Controls.Add(pictureBox3);
+            Controls.Add(saveBtn);
             Controls.Add(label15);
             Controls.Add(label1);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(comboBox1);
+            Controls.Add(incDate);
+            Controls.Add(incCatCb);
             Controls.Add(label2);
             Controls.Add(label3);
-            Controls.Add(textBox3);
+            Controls.Add(incAmountTb);
             Controls.Add(label4);
-            Controls.Add(textBox2);
+            Controls.Add(incDescTb);
             Controls.Add(label5);
-            Controls.Add(textBox1);
+            Controls.Add(incNameTb);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Incomes";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Income";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -341,19 +377,21 @@
         private Label label14;
         private Panel panel3;
         private Label label1;
-        private DateTimePicker dateTimePicker1;
-        private ComboBox comboBox1;
+        private DateTimePicker incDate;
+        private ComboBox incCatCb;
         private Label label2;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox incAmountTb;
         private Label label4;
-        private TextBox textBox2;
+        private TextBox incDescTb;
         private Label label5;
-        private TextBox textBox1;
+        private TextBox incNameTb;
         private Panel panel2;
-        private Label label6;
+        private Label TotalIncomeLbl;
         private Label label7;
         private Label label15;
-        private Button button1;
+        private Button saveBtn;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox1;
     }
 }

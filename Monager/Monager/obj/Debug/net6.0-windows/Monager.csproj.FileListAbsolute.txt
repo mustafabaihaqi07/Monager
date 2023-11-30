@@ -19,3 +19,13 @@ C:\Users\Lenovo\source\repos\Monager\Monager\Monager\obj\Debug\net6.0-windows\Mo
 C:\Users\Lenovo\source\repos\Monager\Monager\Monager\obj\Debug\net6.0-windows\Monager.Login.resources
 C:\Users\Lenovo\source\repos\Monager\Monager\Monager\obj\Debug\net6.0-windows\Monager.ViewExpenses.resources
 C:\Users\Lenovo\source\repos\Monager\Monager\Monager\obj\Debug\net6.0-windows\Monager.ViewIncomes.resources
+C:\Users\Lenovo\source\repos\Monager\Monager\Monager\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\Lenovo\source\repos\Monager\Monager\Monager\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\Lenovo\source\repos\Monager\Monager\Monager\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\Lenovo\source\repos\Monager\Monager\Monager\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\Lenovo\source\repos\Monager\Monager\Monager\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Lenovo\source\repos\Monager\Monager\Monager\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Lenovo\source\repos\Monager\Monager\Monager\obj\Debug\net6.0-windows\Monager.csproj.AssemblyReference.cache
+C:\Users\Lenovo\source\repos\Monager\Monager\Monager\obj\Debug\net6.0-windows\Monager.Properties.Resources.resources
+C:\Users\Lenovo\source\repos\Monager\Monager\Monager\obj\Debug\net6.0-windows\Monager.csproj.CopyComplete
+C:\Users\Lenovo\source\repos\Monager\Monager\Monager\obj\Debug\net6.0-windows\Monager.Users.resources
